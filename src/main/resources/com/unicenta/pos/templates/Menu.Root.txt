@@ -1,0 +1,151 @@
+group = menu.addGroup("Menu.Main");
+        group.addPanel("/com/unicenta/images/sale.png", "Menu.Ticket", "com.unicenta.pos.sales.JPanelTicketSales");
+        group.addPanel("/com/unicenta/images/saleedit.png", "Menu.TicketEdit", "com.unicenta.pos.sales.JPanelTicketEdits");
+        group.addPanel("/com/unicenta/images/customerpay.png", "Menu.CustomersPayment", "com.unicenta.pos.customers.CustomersPayment");
+        group.addPanel("/com/unicenta/images/payments.png", "Menu.Payments", "com.unicenta.pos.panels.JPanelPayments");
+        group.addPanel("/com/unicenta/images/calculator.png", "Menu.CloseTPV", "com.unicenta.pos.panels.JPanelCloseMoney");
+
+group = menu.addGroup("Menu.Backoffice");
+    submenu = group.addSubmenu("/com/unicenta/images/plugin.png", "Menu.Plugins", "plugins.configure");
+
+    submenu = group.addSubmenu("/com/unicenta/images/customer.png", "Menu.Customers", "com.unicenta.pos.forms.MenuCustomers");
+    submenu.addTitle("Menu.Panel.Customers.Forms");
+    submenu.addPanel("/com/unicenta/images/customer.png", "Menu.CustomersManagement", "com.unicenta.pos.customers.CustomersPanel");
+
+    submenu.addTitle("Menu.Panel.Customers.Reports");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Customers.Reports.Report", "/com/unicenta/reports/customers.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Customers.Reports.Sales", "/com/unicenta/reports/customers_sales.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Customers.Reports.Debtors", "/com/unicenta/reports/customers_debtors.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Customers.Reports.Diary", "/com/unicenta/reports/customers_diary.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Customers.Reports.Cards", "/com/unicenta/reports/customers_cards.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Customers.Reports.List", "/com/unicenta/reports/customers_list.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Customers.Reports.Export", "/com/unicenta/reports/customers_export.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Customers.Reports.Vouchers", "/com/unicenta/reports/customers_vouchers.bs");
+
+    submenu = group.addSubmenu("/com/unicenta/images/stockmaint.png", "Menu.Suppliers", "com.unicenta.pos.forms.MenuSuppliers");
+    submenu.addTitle("Menu.Panel.Suppliers.Forms");
+        submenu.addPanel("/com/unicenta/images/customer.png", "Menu.SuppliersManagement", "com.unicenta.pos.suppliers.SuppliersPanel");
+    submenu.addTitle("Menu.Panel.Suppliers.Reports");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Suppliers.Reports.Report", "/com/unicenta/reports/suppliers.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Suppliers.Reports.Products", "/com/unicenta/reports/suppliers_products.bs");
+//        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Suppliers.Reports.Creditors", "/com/unicenta/reports/suppliers_creditors.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Suppliers.Reports.Diary", "/com/unicenta/reports/suppliers_diary.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Suppliers.Reports.Sales", "/com/unicenta/reports/suppliers_sales.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Suppliers.Reports.List", "/com/unicenta/reports/suppliers_list.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Suppliers.Reports.Export", "/com/unicenta/reports/suppliers_export.bs");
+
+    submenu = group.addSubmenu("/com/unicenta/images/products.png", "Menu.StockManagement", "com.unicenta.pos.forms.MenuStockManagement");
+    submenu.addTitle("Menu.Panel.Stock.Forms");
+
+        submenu.addPanel("/com/unicenta/images/category.png", "Menu.Categories", "com.unicenta.pos.inventory.CategoriesPanel");
+        submenu.addPanel("/com/unicenta/images/products.png", "Menu.Products", "com.unicenta.pos.inventory.ProductsPanel");
+        submenu.addPanel("/com/unicenta/images/location.png", "Menu.ProductsWarehouse", "com.unicenta.pos.inventory.ProductsWarehousePanel");
+        submenu.addPanel("/com/unicenta/images/stockmaint.png", "Menu.StockMovement", "com.unicenta.pos.inventory.StockManagement");
+        submenu.addPanel("/com/unicenta/images/auxiliary.png", "Menu.Auxiliar", "com.unicenta.pos.inventory.AuxiliarPanel");
+        submenu.addPanel("/com/unicenta/images/bundle.png", "Menu.Bundle", "com.unicenta.pos.inventory.BundlePanel");
+        submenu.addPanel("/com/unicenta/images/attributes.png", "Menu.Attributes", "com.unicenta.pos.inventory.AttributesPanel");
+        submenu.addPanel("/com/unicenta/images/attributes.png", "Menu.AttributeValues", "com.unicenta.pos.inventory.AttributeValuesPanel");
+        submenu.addPanel("/com/unicenta/images/attributes.png", "Menu.AttributeSets", "com.unicenta.pos.inventory.AttributeSetsPanel");
+        submenu.addPanel("/com/unicenta/images/attributes.png", "Menu.AttributeUse", "com.unicenta.pos.inventory.AttributeUsePanel");
+        submenu.addPanel("/com/unicenta/images/products.png", "Menu.Uom", "com.unicenta.pos.inventory.UomPanel");
+
+    submenu.addTitle("Menu.Panel.Stock.Reports");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Inventory", "/com/unicenta/reports/inventory.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Inventory2", "/com/unicenta/reports/inventory_b.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Inventory.Reports.Diary", "/com/unicenta/reports/inventory_diary.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.InventoryBroken", "/com/unicenta/reports/inventory_broken.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.InventoryDiff", "/com/unicenta/reports/inventory_diff.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.InventoryDiffDetail", "/com/unicenta/reports/inventory_diffdetail.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.InventoryListDetail", "/com/unicenta/reports/inventory_listdetail.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Products", "/com/unicenta/reports/products.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.SaleCatalog", "/com/unicenta/reports/salecatalog.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.ProductLabels", "/com/unicenta/reports/labels_product.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.BarcodeSheet", "/com/unicenta/reports/labels_barcode_sheet.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.ShelfEdgeLabels", "/com/unicenta/reports/labels_barcode_shelfedge.bs");
+
+
+    submenu = group.addSubmenu("/com/unicenta/images/sales.png", "Menu.SalesManagement", "com.unicenta.pos.forms.MenuSalesManagement");
+    submenu.addTitle("Menu.Panel.Sales.Reports");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Closing", "/com/unicenta/reports/sales_closedpos.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Closing1", "/com/unicenta/reports/sales_closedpos_1.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.CashRegisterLog", "/com/unicenta/reports/sales_cashregisterlog.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.ExtendedCashRegisterLog", "/com/unicenta/reports/sales_extendedcashregisterlog.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.CashFlow", "/com/unicenta/reports/sales_cashflow.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.PaymentReport", "/com/unicenta/reports/sales_payments.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.CategorySales", "/com/unicenta/reports/sales_categorysales.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.CategorySales1", "/com/unicenta/reports/sales_categorysales_1.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.ClosedProducts", "/com/unicenta/reports/sales_closedproducts.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.ClosedProducts1", "/com/unicenta/reports/sales_closedproducts_1.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.ExtendedByProducts", "/com/unicenta/reports/sales_extproducts.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.SalesProfit", "/com/unicenta/reports/sales_productsalesprofit.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.SaleTaxes", "/com/unicenta/reports/sales_saletaxes.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.TaxCatSales", "/com/unicenta/reports/sales_taxcatsales.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.ReportTaxes", "/com/unicenta/reports/sales_taxes.bs");
+    submenu.addTitle("Menu.Panel.Sales.Charts");
+        submenu.addPanel("/com/unicenta/images/chart.png", "Menu.ProductSales", "/com/unicenta/reports/sales_chart_productsales.bs");
+        submenu.addPanel("/com/unicenta/images/chart.png", "Menu.ProductCategorySalesPieChart", "/com/unicenta/reports/sales_chart_piesalescat.bs");
+        submenu.addPanel("/com/unicenta/images/chart.png", "Menu.SalesChart", "/com/unicenta/reports/sales_chart_sales.bs");
+        submenu.addPanel("/com/unicenta/images/chart.png", "Menu.TimeSeriesProduct", "/com/unicenta/reports/sales_chart_timeseriesproduct.bs");
+        submenu.addPanel("/com/unicenta/images/chart.png", "Menu.Top10Sales", "/com/unicenta/reports/sales_chart_top10.bs");
+
+
+    submenu = group.addSubmenu("/com/unicenta/images/maintain.png", "Menu.Maintenance", "com.unicenta.pos.forms.MenuMaintenance");
+    submenu.addTitle("Menu.Panel.Maintenance.Forms");        
+        submenu.addPanel("/com/unicenta/images/resources.png", "Menu.Resources", "com.unicenta.pos.admin.ResourcesPanel");
+        submenu.addPanel("/com/unicenta/images/roles.png", "Menu.Roles", "com.unicenta.pos.admin.RolesPanel");
+        submenu.addPanel("/com/unicenta/images/user.png", "Menu.Users", "com.unicenta.pos.admin.PeoplePanel");
+        submenu.addPanel("/com/unicenta/images/bookmark.png", "Menu.TaxCategories", "com.unicenta.pos.inventory.TaxCategoriesPanel");
+        submenu.addPanel("/com/unicenta/images/bookmark.png", "Menu.TaxCustCategories", "com.unicenta.pos.inventory.TaxCustCategoriesPanel");
+        submenu.addPanel("/com/unicenta/images/bookmark.png", "Menu.Taxes", "com.unicenta.pos.inventory.TaxPanel");
+        submenu.addPanel("/com/unicenta/images/location.png", "Menu.Locations", "com.unicenta.pos.inventory.LocationsPanel");
+        submenu.addPanel("/com/unicenta/images/floors.png", "Menu.Floors", "com.unicenta.pos.mant.JPanelFloors");
+        submenu.addPanel("/com/unicenta/images/tables.png", "Menu.Tables", "com.unicenta.pos.mant.JPanelPlaces");
+        submenu.addPanel("/com/unicenta/images/products.png", "Menu.Vouchers", "com.unicenta.pos.voucher.VoucherPanel");
+
+    submenu.addTitle("Menu.Panel.Maintenance.Reports");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.UsersReport", "/com/unicenta/reports/users.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.UserSells", "/com/unicenta/reports/users_sales.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.UserNoSales", "/com/unicenta/reports/users_nosales.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.UserVoids", "/com/unicenta/reports/users_voids.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Customers.Reports.Vouchers", "/com/unicenta/reports/customers_vouchers.bs");
+
+// EPM
+    submenu = group.addSubmenu("/com/unicenta/images/users.png", "Menu.PresenceManagement", "com.unicenta.pos.forms.MenuEmployees");
+    submenu.addTitle("Menu.PresenceManagement");
+        submenu.addPanel("/com/unicenta/images/coffee.png", "Menu.Breaks", "com.unicenta.pos.epm.BreaksPanel");
+        submenu.addPanel("/com/unicenta/images/leaves.png", "Menu.Leaves", "com.unicenta.pos.epm.LeavesPanel");
+        submenu.addTitle("Menu.Employees.Reports");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.EPM.DailyPresenceReport", "/com/unicenta/reports/epm_dailypresence.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.EPM.DailyScheduleReport", "/com/unicenta/reports/epm_dailyschedule.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.EPM.PerformanceReport", "/com/unicenta/reports/epm_performance.bs");
+
+ 
+    group = menu.addGroup("Menu.Utilities");
+    submenu = group.addSubmenu("/com/unicenta/images/utilities.png", "Menu.Tools", "com.unicenta.pos.imports.JPanelCSV");
+    submenu.addTitle("Menu.Import");
+        submenu.addPanel("/com/unicenta/images/import.png", "Menu.CSVImport", "com.unicenta.pos.imports.JPanelCSVImport");
+        submenu.addPanel("/com/unicenta/images/import.png", "Menu.CSVStockQty", "com.unicenta.pos.imports.StockQtyImport");
+        submenu.addPanel("/com/unicenta/images/import.png", "Menu.CustomerCSVImport", "com.unicenta.pos.imports.CustomerCSVImport");
+        submenu.addPanel("/com/unicenta/images/database.png", "Menu.CSVReset", "com.unicenta.pos.imports.JPanelCSVCleardb");
+        submenu.addPanel("/com/unicenta/images/database.png", "Menu.Transfer", "com.unicenta.pos.transfer.Transfer");
+    submenu.addTitle("Menu.Import.Reports");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Tools.NewProducts", "/com/unicenta/reports/tools_newproducts.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Tools.UpdatedPrices", "/com/unicenta/reports/tools_updatedprices.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Tools.StockQtyUpdate", "/com/unicenta/reports/tools_inventoryqtyupdate.bs");
+//        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Tools.BadPrices", "/com/unicenta/reports/tools_badprice.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Tools.InvalidCategory", "/com/unicenta/reports/tools_invalidcategory.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Tools.MissingData", "/com/unicenta/reports/tools_missingdata.bs");
+        submenu.addPanel("/com/unicenta/images/reports.png", "Menu.Tools.InvalidData", "/com/unicenta/reports/tools_invaliddata.bs");
+
+    group = menu.addGroup("Menu.System");
+    group.addChangePasswordAction();
+    group.addPanel("/com/unicenta/images/configuration.png", "Menu.Configuration", "com.unicenta.pos.config.JPanelConfiguration");
+    group.addPanel("/com/unicenta/images/printer.png", "Menu.Printer", "com.unicenta.pos.panels.JPanelPrinter");
+    group.addPanel("/com/unicenta/images/timer.png", "Menu.CheckInCheckOut", "com.unicenta.pos.epm.JPanelEmployeePresence");
+
+// Deprecated options. Only required with Openbravo ERP software
+//       submenu.addTitle("Menu.Maintenance.ERP");
+//       submenu.addExecution("/com/unicenta/images/openbravo.png", "Menu.ERPProducts", "com.unicenta.possync.ProductsSyncCreate");
+//       submenu.addExecution("/com/unicenta/images/openbravo.png", "Menu.ERPOrders", "com.unicenta.possync.OrdersSyncCreate");
+
+    group.addExitAction();

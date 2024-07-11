@@ -1,0 +1,37 @@
+//    uniCenta oPOS  - Touch Friendly Point Of Sale
+//    Copyright (c) 2009-2018 uniCenta
+//    https://unicenta.com
+//
+//    This file is part of uniCenta oPOS
+//
+//    uniCenta oPOS is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//   uniCenta oPOS is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with uniCenta oPOS.  If not, see <http://www.gnu.org/licenses/>
+
+report = new com.unicenta.pos.reports.PanelReportBean();
+
+report.setTitleKey("Menu.InventoryQtyUpdate");
+report.setReport("/com/unicenta/reports/tools_inventoryqtyupdate");
+report.setResourceBundle("com/unicenta/reports/tools_messages");
+
+report.setSentence("SELECT ROWNUMBER, CSVERROR, REFERENCE, CODE, PRICEBUY " +
+        "FROM csvimport " +
+        "WHERE CSVERROR = 'Qty update'" +
+        "ORDER BY ROWNUMBER");
+
+report.addField("rownumber", com.unicenta.data.loader.Datas.STRING);
+report.addField("csverror", com.unicenta.data.loader.Datas.STRING);
+report.addField("reference", com.unicenta.data.loader.Datas.STRING);
+report.addField("code", com.unicenta.data.loader.Datas.STRING);
+report.addField("pricebuy", com.unicenta.data.loader.Datas.DOUBLE);
+
+report;

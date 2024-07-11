@@ -1,0 +1,74 @@
+//    uniCenta oPOS - Touch Friendly Point Of Sale
+//    Copyright (c) 2015 uniCenta
+//    https://unicenta.com
+//
+//    This file is part of uniCenta oPOS
+//
+//    uniCenta oPOS is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    uniCenta oPOS is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with uniCenta oPOS.  If not, see <http://www.gnu.org/licenses/>.
+
+report = new com.unicenta.pos.reports.PanelReportBean();
+
+report.setTitleKey("Menu.Suppliers.Reports.Diary");
+report.setReport("/com/unicenta/reports/suppliers_diary");
+report.setResourceBundle("com/unicenta/reports/suppliers_messages");
+
+report.setSentence("SELECT "
+                    + "MIN(suppliers.NAME), "
+                    + "MIN(stockdiary.datenew), "
+                    + "MIN(products.NAME), MIN(products.REFERENCE), "
+                    + "MIN(stockdiary.units), MIN(stockdiary.price), "
+                    + "MIN(stockdiary.supplierdoc), MIN(stockdiary.reason), "
+                    + "sum(stockdiary.units * stockdiary.price) AS totalP " 
+                + "FROM (stockdiary stockdiary "
+                        + "INNER JOIN suppliers suppliers "
+                        + "ON (stockdiary.supplier = suppliers.id)) "
+                        + "INNER JOIN products products "
+                        + "ON (stockdiary.product = products.ID) "
+                + "WHERE VISIBLE = " + app.getSession().DB.TRUE() + " AND ?(QBF_FILTER)" 
+                    + "GROUP BY suppliers.id, stockdiary.id, products.id " 
+                + "ORDER BY MIN(suppliers.NAME), MIN(stockdiary.datenew) DESC");
+
+report.addParameter("suppliers.ID");
+report.addParameter("suppliers.NAME");
+report.addQBFFilter(new com.unicenta.pos.reports.JParamsSuppliers());
+
+report.addParameter("stockdiary.REASON");
+report.addQBFFilter(new com.unicenta.pos.reports.JParamsReason());
+
+report.addParameter("stockdiary.DATENEW");
+report.addParameter("stockdiary.DATENEW");
+paramdates = new com.unicenta.pos.reports.JParamsDatesInterval();
+
+paramdates.setStartDate(com.unicenta.beans.DateUtils.getToday());
+paramdates.setEndDate(com.unicenta.beans.DateUtils.getTodayMinutes());
+report.addQBFFilter(paramdates);
+
+report.addParameter("products.NAME");
+report.addParameter("products.PRICEBUY");
+report.addParameter("products.PRICESELL");
+report.addParameter("products.CATEGORY");
+report.addParameter("products.CODE");
+report.addQBFFilter(new com.unicenta.pos.ticket.ProductFilter());
+
+report.addField("SUPPLIERNAME", com.unicenta.data.loader.Datas.STRING);
+report.addField("DATENEW", com.unicenta.data.loader.Datas.TIMESTAMP);
+report.addField("PRODUCTNAME", com.unicenta.data.loader.Datas.STRING);
+report.addField("REFERENCE", com.unicenta.data.loader.Datas.STRING);
+report.addField("UNITS", com.unicenta.data.loader.Datas.DOUBLE);
+report.addField("PRICE", com.unicenta.data.loader.Datas.DOUBLE);
+report.addField("SUPPLIERDOC", com.unicenta.data.loader.Datas.STRING);
+report.addField("REASON", com.unicenta.data.loader.Datas.INT);
+report.addField("TOTALP", com.unicenta.data.loader.Datas.DOUBLE);
+
+report;
