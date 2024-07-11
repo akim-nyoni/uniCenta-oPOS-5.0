@@ -1,4 +1,12 @@
-# uniCenta oPos
+# uniCenta oPos 5.0
+link for original files https://sourceforge.net/projects/unicentaopos/files/source/unicenta-opos-5.0.zip/download
+
+#Requirements to run the code I uploaded:
+
+*##Java JDK 11
+*##Maven 3.9.8
+*##MySQL Database
+*##Internet Connection to download dependencies
 
 ## Overview
 
