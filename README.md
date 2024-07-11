@@ -42,6 +42,6 @@ mvn clean package
 java -jar ./target/unicentaopos
 ```
 
-
+# Note: *if this java -jar ./target/unicentaopos fails. use start.bat or start.sh depending on operating system you using. start.bat and start.sh are located in the target folder*
 
 
